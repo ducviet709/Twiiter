@@ -1,0 +1,699 @@
+body {
+    font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 1200px) {
+    body .container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    body .container {
+        max-width: 70%;
+    }
+}
+
+.container .row .col-3 {
+    max-width: 230px;
+}
+
+
+#outerMenuContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+}
+
+#outerMenuContainer:hover {
+    color: #1DA1F2 !important;
+    background: #CFE7F6;
+    border-radius: 25px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+#outerMenuContainer:hover a {
+    color: #1DA1F2 !important;
+}
+
+#outerMenuContainer a {
+    text-decoration: none;
+    color: black;
+}
+
+#leftNav {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: 800;
+    background-color: white;
+}
+
+#rightNav {
+    min-width: 380px;
+    background-color: white;
+}
+
+#rightNav .input-group-prepend {
+    background-color: white !important;
+    color: white !important;
+}
+
+#search {
+    border-radius: 30px;
+    height: 10px;
+    padding: 20px;
+    position: relative;
+    width: 349px;
+    background-color: #e6ecf0;
+}
+
+#trendings {
+    min-width: 380px;
+}
+
+#trendings .list-group-item {
+    background-color: #f5f8fa;
+}
+
+#trendings .content {
+    cursor: pointer;
+}
+
+#trendings .trends-header {
+    font-weight: 800;
+    font-size: larger;
+}
+
+#trendings .content:hover {
+    filter: brightness(97%)
+}
+
+#trendings ul li .hashtag {
+    font-weight: 700;
+}
+
+#moreToFollowImg {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.fa-badge-check {
+    color: rgba(29, 161, 242, 1.00);
+}
+
+.followBtn {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 25px;
+    color: #1DA1F2;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: 200;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border: solid #1DA1F2 1px;
+    text-decoration: none;
+    /* display: inline-block; */
+    cursor: pointer;
+    text-align: center;
+}
+
+.followBtn:hover {
+    color: #1DA1F2;
+    background: #CFE7F6;
+    border-radius: 25px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+#whoToFollow {
+    min-width: 380px;
+}
+
+#whoToFollow .list-group-item {
+    background-color: #f5f8fa;
+}
+
+#whoToFollow .content {
+    cursor: pointer;
+}
+
+#whoToFollow .content:hover {
+    filter: brightness(97%)
+}
+
+#whoToFollow .row .col-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#whoToFollow .row .col-6 .hashtag {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#whoToFollow .row .col-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#whoToFollow .whoToFollow-header {
+    font-weight: 800;
+    font-size: larger;
+}
+
+h6 {
+    font-weight: 700;
+}
+
+#content .functionBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contentArea #content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* #content .row {
+    padding: 30px;
+    border-bottom: 1px solid lightgrey;
+} */
+
+
+/* #content .row div {
+    margin-top: 4px;
+} */
+
+#tweetArea[placeholder]:empty::before,
+#tweetArea-modal[placeholder]:empty::before {
+    content: attr(placeholder);
+    color: gray;
+    opacity: 0.7;
+}
+
+#tweetArea[placeholder]:empty:focus::before,
+#tweetArea-modal[placeholder]:empty:focus::before {
+    content: "";
+    content: attr(placeholder);
+    color: gray;
+    opacity: 0.7;
+}
+
+#tweetArea[contenteditable]:focus,
+#tweetArea-modal[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+#tweetArea,
+#tweetArea-modal {
+    min-height: 50px;
+}
+
+.tweetbtn {
+    position: relative;
+    display: inline-block;
+    padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4); 
+    background-size: 400%;
+    z-index: 1;
+}
+
+.tweetbtn:hover{
+    animation: animate 8s linear infinite;
+}
+
+
+@keyframes animate{
+    0%{
+       background-position: 0%;
+    }
+    100%{
+       background-position: 400%;
+    }
+}
+
+.tweetbtn::before{
+    content: '';
+    position: absolute;
+    top:-5px;
+    left:-5px;
+    right:-5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.tweetbtn:hover::before{
+    filter: blur(10px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+#inputArea .inputArea-tweetbtn {
+    width: 100px;
+    height: 35px;
+    font-size: medium;
+}
+
+#inputArea .utilityBar,
+#retweetModal .utilityBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#retweetModal .utilityBar {
+    align-items: baseline;
+}
+
+#inputArea .utilityBar input,
+#retweetModal .utilityBar input {
+    display: none;
+}
+
+#inputArea .utilityBar .img-upload i,
+#retweetModal .utilityBar .img-upload i {
+    cursor: pointer;
+}
+
+#inputArea .utilityBar .img-upload label,
+#retweetModal .utilityBar .img-upload label {
+    margin-bottom: 0px;
+}
+
+#inputArea .utilityBar .icons,
+#retweetModal .utilityBar .icons {
+    color: #16a2f2;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweetbtn:hover {
+    background-color: rgba(26, 145, 218);
+}
+
+#inputArea #header {
+    padding-bottom: 15px;
+    border-bottom: 10px solid #e6ecf0;
+    /* height: 5px;
+    background-color: #e6ecf0;
+    width: 100%; */
+}
+
+#image-container {
+    display: flex;
+}
+
+#image-container-tweet {
+    display: flex;
+}
+
+@media (min-width: 1200px) {
+    #my-img {
+        width: 275px;
+    }
+}
+
+
+/* extra large devices */
+
+@media screen and (min-width: 1800px) {
+    #my-img {
+        width: 290px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #tweet-img {
+        width: 220px;
+    }
+}
+
+
+/* extra large devices */
+
+@media screen and (min-width: 1800px) {
+    #tweet-img {
+        width: 250px;
+    }
+}
+
+#tweetTitle {
+    font-weight: bold;
+}
+
+#tweetAt,
+#tweetTime {
+    color: gray;
+    opacity: 0.9;
+}
+
+#content:hover {
+    background-color: #f5f8fa;
+}
+
+#image-container-tweet {
+    border-color: #e6ecf0;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.comment-func:hover {
+    color: #16a2f2;
+    cursor: pointer;
+}
+
+.retweet-func:hover {
+    color: lightgreen;
+    cursor: pointer;
+}
+
+.like-func:hover {
+    color: lightpink;
+    cursor: pointer;
+}
+
+.upload-func:hover {
+    color: #16a2f2;
+    cursor: pointer;
+}
+
+#indicatorContainer canvas {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.theSelector{
+    border:none;
+    width:100%;
+    height: 100px;
+    resize: none;
+    overflow-y: hidden;
+}
+
+.theSelector, #dummy {
+    width: 100%; 
+    font-size: 18px;
+}
+
+#dummy {
+    visibility: hidden;
+    height: 0px;
+}
+
+.profile-image{
+    border-radius: 50%;
+}
+
+.wrapword {
+    word-break: break-word;
+    font-size: 25px;
+  }
+
+  .iconwave{
+    position: relative;
+    display: flex;
+    transform-style: preserve-3d;
+    }
+    
+    .iconwave .icon-animation{
+    position: relative;
+    list-style: none;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    }
+    .iconwave .icon-animation:before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    /* background: #2a2a2a; */
+    transform-origin: top;
+    }
+    
+    .iconwave .icon-animation:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: px;
+    height: 100%;
+    /* background: #2a2a2a; */
+    transform-origin: right;
+    }
+    
+    .iconwave .icon-animation .here-we-go{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background:white;
+    color: rgba(14, 164, 190, 0.925);
+    font-size: 30px !important;
+    transition: 0.2s;
+    }
+    
+    
+    .iconwave .icon-animation:hover .here-we-go{
+    z-index: 1000;
+    transition: 0.5s;
+    /* color: rgba(24, 197, 160, 0.699); */
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 1.0.05);
+    }
+    
+    
+    .iconwave .icon-animation:hover .here-we-go:nth-child(5){
+    transform: translate(30px,-30px);
+    opacity: 1;
+    }
+    .iconwave .icon-animation:hover .here-we-go:nth-child(4){
+    transform: translate(20px,-20px);
+    opacity: 0.6;
+    }
+    .iconwave .icon-animation:hover .here-we-go:nth-child(2){
+    transform: translate(10px,-10px);
+    opacity: 0.4;
+    }
+    .iconwave .icon-animation:hover .here-we-go:nth-child(1){
+    transform: translate(0px,0px);
+    opacity: 0.2;
+    }
+    
+    
+    .face{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ffcd00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .face::before{
+    content: '';
+    position: absolute;
+    top:130px;
+    width: 100px;
+    height: 50px;
+    background: #b57700;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    transition: 0.5s;
+    }
+    
+    .face:hover::before{
+    top:150px;
+    width: 90px;
+    height: 10px;
+    background: #b57700;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
+    }
+    
+    .eyes{
+    position: relative;
+    top:-30px;
+    display: flex;
+    }
+    .eyes .eye{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: #fff;
+    margin: 0 15px;
+    border-radius: 50%;
+    }
+    
+    .eyes .eye::before{
+    content: '';
+    position:absolute;
+    top:30%;
+    left:15px;
+    transform: 25px;
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border-radius: 50%;
+    }
+    
+    
+    .btn-neon{
+    position: relative;
+    color:#21ebff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    transition: 0.5s;
+    overflow: hidden;
+    }
+    
+    .btn-neon:hover{
+    background: #21ebff;
+    color:#111;
+    box-shadow: 0 0 50px #21ebff;
+    transition-delay: 0.5s;
+    }
+    .btn-neon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 20px;
+    height: 10px;
+    border-top: 2px solid #21ebff;
+    border-left: 2px solid #21ebff;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    }
+    
+    .btn-neon:hover::before{
+    width: 100%;
+    height: 100%;
+    }
+    
+    .btn-neon::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    width: 20px;
+    height: 10px;
+    border-bottom: 2px solid #21ebff;
+    border-right: 2px solid #21ebff;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    }
+    
+    .btn-neon:hover::after{
+    width: 100%;
+    height: 100%;
+    transition-delay: 0s;
+    }
+
+    .whoToFollow-header .thunder{
+        animation: thunder-text 3s linear infinite;
+    }
+
+    .whoToFollow-header .thunder:nth-child(1)
+    {
+        animation-delay: 0s;
+    }
+    .whoToFollow-header .thunder:nth-child(2)
+    {
+        animation-delay: 0.25s;
+    }
+    .whoToFollow-header .thunder:nth-child(3)
+    {
+        animation-delay: 0.5s;
+    }
+    .whoToFollow-header .thunder:nth-child(4)
+    {
+        animation-delay: 0.75s;
+    }
+    .whoToFollow-header .thunder:nth-child(5)
+    {
+        animation-delay: 1s;
+    }
+    .whoToFollow-header .thunder:nth-child(6)
+    {
+        animation-delay: 1.25s;
+    }
+    .whoToFollow-header .thunder:nth-child(7)
+    {
+        animation-delay: 1.5s;
+    }
+    .whoToFollow-header .thunder:nth-child(8)
+    {
+        animation-delay: 1.75s;
+    }
+    .whoToFollow-header .thunder:nth-child(9)
+    {
+        animation-delay: 2s;
+    }
+    .whoToFollow-header .thunder:nth-child(10)
+    {
+        animation-delay: 2.25s;
+    }
+    .whoToFollow-header .thunder:nth-child(11)
+    {
+        animation-delay: 2.5s;
+    }
+    @keyframes thunder-text{
+        0%,100%{
+            color: #fff;
+            filter: blur(2px);
+            text-shadow: 0 0 10px #00b3ff,
+                        0 0 20px #00b3ff,
+                        0 0 40px #00b3ff,
+                        0 0 80px #00b3ff,
+                        0 0 120px #00b3ff,
+                        0 0 200px #00b3ff,
+                        0 0 300px #00b3ff,
+                        0 0 400px #00b3ff,
+                        0 0 600px #00b3ff,
+                        0 0 800px #00b3ff,
+                        0 0 900px #00b3ff;
+                     
+                       
+                      
+        }
+        5%,95%{
+            color:#111;
+            filter: blur(0px);
+            text-shadow:  none;
+        }
+    }
